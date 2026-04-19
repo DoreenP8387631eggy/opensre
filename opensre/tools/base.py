@@ -95,6 +95,6 @@ class BaseTool(ABC):
 
         return self.run(params)
 
-    def __repr__(self) -> str:  # pragma: no cover
-        available = self.is_available()
-        return f"<{type(self).__name__} name={self.my_tool_name!r} available={available}>"
+    def __repr__(self) -> str:
+        # Quick repr so tools are easier to identify when debugging.
+        return f"<{self.__class__.__name__} name={self.my_tool_name!r}>"
