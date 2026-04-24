@@ -96,6 +96,5 @@ class BaseTool(ABC):
         return self.run(params)
 
     def __repr__(self) -> str:
-        # Quick repr so tools are easier to identify when debugging
-        available = self.is_available()
-        return f"<{self.__class__.__name__} name={self.my_tool_name!r} available={available}>"
+        # Handy for debugging in the REPL - shows the tool name at a glance.
+        return f"{self.__class__.__name__}(name={self.my_tool_name!r})"
